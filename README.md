@@ -27,4 +27,4 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
 ### What I learned
 
 - Use the `gap` CSS property to easily create consistent spacing between flex items.
-- Load external font by @font-face
+- Load external font by `@font-face`.
