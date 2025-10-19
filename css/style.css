@@ -49,7 +49,7 @@ img {
   border-radius: 1.25rem;
   box-shadow: 8px 8px #000;
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .card {
     max-width: 24rem;
   }
@@ -76,7 +76,7 @@ img {
 .card > .card-body .publishDate {
   font-size: 0.75rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .card > .card-body > .cta,
   .card > .card-body .publishDate {
     font-size: 0.875rem;
@@ -87,7 +87,7 @@ img {
   font-weight: 800;
   cursor: pointer;
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .card > .card-body > .title {
     font-size: 1.5rem;
   }
@@ -99,7 +99,7 @@ img {
   font-size: 0.875rem;
   color: hsl(0, 0%, 42%);
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .card > .card-body > .description {
     font-size: 1rem;
   }
@@ -117,7 +117,7 @@ img {
   font-size: 0.875rem;
   font-weight: 500;
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .card > .author-info > .userName {
     font-weight: 800;
   }
