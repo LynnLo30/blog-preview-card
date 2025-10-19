@@ -4,6 +4,12 @@ $gray-500: hsl(0, 0%, 42%);
 $gray-950: hsl(0, 0%, 7%);
 $radius: 1.25rem;
 
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
 @font-face {
   font-family: 'Figtree';
   src: url('assets/fonts/static/Figtree-Medium.ttf') format('truetype');
@@ -19,6 +25,8 @@ $radius: 1.25rem;
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -41,15 +49,19 @@ img {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0 1.5rem;
 }
 
 .card {
-  min-width: 20.3125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 20.3125rem;
+
+  @include desktop {
+    max-width: 24rem;
+  }
+
   padding: 1.5rem;
   background-color: $white;
   border: 1px solid $gray-950;
@@ -60,34 +72,53 @@ img {
     border-radius: $radius / 2;
   }
 
-  >.card-img,
-  .card-body {
-    margin-bottom: 1.5rem;
-  }
-
   >.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
     >.cta {
+      align-self: flex-start;
       padding: 0.25rem 0.75rem;
       background-color: $yellow;
-      font-size: 0.75rem;
       font-weight: 800;
+      line-height: 1.5;
       border: none;
       border-radius: $radius / 5;
       cursor: pointer;
     }
 
-    >.publishDate {
+    >.cta,
+    .publishDate {
       font-size: 0.75rem;
+
+      @include desktop {
+        font-size: 0.875rem;
+      }
     }
 
     >.title {
-      margin: 0.75rem 0;
       font-size: 1.25rem;
+
+      @include desktop {
+        font-size: 1.5rem;
+      }
+
       font-weight: 800;
+      cursor: pointer;
+
+      &:hover {
+        color: $yellow;
+      }
     }
 
     >.description {
       font-size: 0.875rem;
+
+      @include desktop {
+        font-size: 1rem;
+      }
+
       color: $gray-500;
     }
   }
@@ -104,6 +135,11 @@ img {
 
     >.userName {
       font-size: 0.875rem;
+      font-weight: 500;
+
+      @include desktop {
+        font-weight: 800;
+      }
     }
   }
 }

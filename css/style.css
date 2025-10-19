@@ -11,6 +11,8 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -33,48 +35,74 @@ img {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0 1.5rem;
 }
 
 .card {
-  min-width: 20.3125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 20.3125rem;
   padding: 1.5rem;
   background-color: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 7%);
   border-radius: 1.25rem;
   box-shadow: 8px 8px #000;
 }
+@media (min-width: 768px) {
+  .card {
+    max-width: 24rem;
+  }
+}
 .card > .card-img {
   border-radius: 0.625rem;
 }
-.card > .card-img,
-.card .card-body {
-  margin-bottom: 1.5rem;
+.card > .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 .card > .card-body > .cta {
+  align-self: flex-start;
   padding: 0.25rem 0.75rem;
   background-color: hsl(47, 88%, 63%);
-  font-size: 0.75rem;
   font-weight: 800;
+  line-height: 1.5;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
 }
-.card > .card-body > .publishDate {
+.card > .card-body > .cta,
+.card > .card-body .publishDate {
   font-size: 0.75rem;
 }
+@media (min-width: 768px) {
+  .card > .card-body > .cta,
+  .card > .card-body .publishDate {
+    font-size: 0.875rem;
+  }
+}
 .card > .card-body > .title {
-  margin: 0.75rem 0;
   font-size: 1.25rem;
   font-weight: 800;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .card > .card-body > .title {
+    font-size: 1.5rem;
+  }
+}
+.card > .card-body > .title:hover {
+  color: hsl(47, 88%, 63%);
 }
 .card > .card-body > .description {
   font-size: 0.875rem;
   color: hsl(0, 0%, 42%);
+}
+@media (min-width: 768px) {
+  .card > .card-body > .description {
+    font-size: 1rem;
+  }
 }
 .card > .author-info {
   display: flex;
@@ -87,6 +115,12 @@ img {
 }
 .card > .author-info > .userName {
   font-size: 0.875rem;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .card > .author-info > .userName {
+    font-weight: 800;
+  }
 }
 
 .attribution {
